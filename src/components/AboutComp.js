@@ -65,24 +65,24 @@ export const AboutComp = () => {
           </div>
           <div className="about-story-timeline">
             <div className="about-timeline-item">
-              <div className="about-timeline-year">2020</div>
+              <div className="about-timeline-year">2023</div>
               <div className="about-timeline-content">
                 <h3>Lancement</h3>
                 <p>Création de notre boutique en ligne avec une sélection soignée de produits authentiques et durables.</p>
               </div>
             </div>
             <div className="about-timeline-item">
-              <div className="about-timeline-year">2022</div>
+              <div className="about-timeline-year">2024</div>
               <div className="about-timeline-content">
                 <h3>Expansion</h3>
-                <p>Élargissement de notre catalogue et mise en place de la livraison express dans toute la France.</p>
+                <p>Élargissement de notre catalogue et mise en place de la livraison express dans toute la ville.</p>
               </div>
             </div>
             <div className="about-timeline-item">
-              <div className="about-timeline-year">2024</div>
+              <div className="about-timeline-year">2025</div>
               <div className="about-timeline-content">
                 <h3>Innovation</h3>
-                <p>Lancement de notre application mobile et intégration de nouvelles technologies de paiement sécurisé.</p>
+                <p>Lancement de notre site web et intégration de technologies de paiement sécurisé.</p>
               </div>
             </div>
           </div>
