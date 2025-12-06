@@ -7,8 +7,8 @@ import { AuthProvider, useAuth } from "./AuthContext";
 import { CartProvider } from "./Context/CartContext";
 
 // Navbars
-// import UserNavbar from "./components/UserNavbar";
-// import AdminNavbar from "./components/AdminNavbar";
+import UserNavbar from "./components/UserNavbar";
+import AdminNavbar from "./components/AdminNavbar";
 
 // Pages publiques
 import Login from "./components/auth/Login";
@@ -44,12 +44,12 @@ const NavbarWrapper = () => {
     return null;
   }
 
-  // if (auth.role === "admin") {
-  //   return <AdminNavbar />;
-  // }
+  if (auth.role === "admin") {
+    return <AdminNavbar />;
+  }
 
-  // // Si pas admin → UserNavbar (connecté ou pas)
-  // return <UserNavbar />;
+  // Si pas admin → UserNavbar (connecté ou pas)
+  return <UserNavbar />;
 };
 
 // PrivateRoute simple
@@ -67,97 +67,97 @@ const PrivateRoute = ({ children, adminOnly }) => {
 };
 
 function App() {
-  // return (
-  //   <AuthProvider>
-  //     <CartProvider>
-  //       <Router>
-  //         {/*  Navbar conditionnée */}
-  //         <NavbarWrapper />
+  return (
+    <AuthProvider>
+      <CartProvider>
+        <Router>
+          {/*  Navbar conditionnée */}
+          <NavbarWrapper />
 
-  //         <Routes>
-  //           {/* Pages publiques */}
-  //           {/* <Route path="/" element={<Home />} /> */}
-  //           {/* <Route path="/" element={<Home />} /> */}
-  //           <Route path="/login" element={<Login />} />
-  //           <Route path="/register" element={<Register />} />
-  //           <Route path="/catalogue" element={<Catalogue />} />
-  //           <Route path="/panier" element={<Panier />} />
-  //           <Route path="/contact" element={<Contact />} />
-  //           <Route path="/apropos" element={<About />} />
+          <Routes>
+            {/* Pages publiques */}
+            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/catalogue" element={<Catalogue />} />
+            <Route path="/panier" element={<Panier />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/apropos" element={<About />} />
 
-  //           {/* Pages user privées */}
-  //           <Route
-  //             path="/accueil"
-  //             element={
-  //               <PrivateRoute>
-  //                 <Accueil />
-  //               </PrivateRoute>
-  //             }
-  //           />
-  //           <Route
-  //             path="/Commande"
-  //             element={
-  //               <PrivateRoute>
-  //                 <Commande />
-  //               </PrivateRoute>
-  //             }
-  //           />
-  //           <Route
-  //             path="/MyCommande"
-  //             element={
-  //               <PrivateRoute>
-  //                 <MyCommande />
-  //               </PrivateRoute>
-  //             }
-  //           />
-  //           <Route
-  //             path="/Contact_utilisateur"
-  //             element={
-  //               <PrivateRoute>
-  //                 <Contactuser />
-  //               </PrivateRoute>
-  //             }
-  //           />
+            {/* Pages user privées */}
+            <Route
+              path="/accueil"
+              element={
+                <PrivateRoute>
+                  <Accueil />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/Commande"
+              element={
+                <PrivateRoute>
+                  <Commande />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/MyCommande"
+              element={
+                <PrivateRoute>
+                  <MyCommande />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/Contact_utilisateur"
+              element={
+                <PrivateRoute>
+                  <Contactuser />
+                </PrivateRoute>
+              }
+            />
 
-  //           {/* Pages admin privées */}
-  //           <Route
-  //             path="/admin-accueil"
-  //             element={
-  //               <PrivateRoute adminOnly={true}>
-  //                 <A_accueil />
-  //               </PrivateRoute>
-  //             }
-  //           />
-  //           <Route
-  //             path="/admin-catalogue"
-  //             element={
-  //               <PrivateRoute adminOnly={true}>
-  //                 <A_catalogue />
-  //               </PrivateRoute>
-  //             }
-  //           />
-  //           <Route
-  //             path="/admin-commande"
-  //             element={
-  //               <PrivateRoute adminOnly={true}>
-  //                 <A_Commande />
-  //               </PrivateRoute>
-  //             }
-  //           />
+            {/* Pages admin privées */}
+            <Route
+              path="/admin-accueil"
+              element={
+                <PrivateRoute adminOnly={true}>
+                  <A_accueil />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/admin-catalogue"
+              element={
+                <PrivateRoute adminOnly={true}>
+                  <A_catalogue />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/admin-commande"
+              element={
+                <PrivateRoute adminOnly={true}>
+                  <A_Commande />
+                </PrivateRoute>
+              }
+            />
 
-  //           <Route
-  //             path="/admin-messages"
-  //             element={
-  //               <PrivateRoute adminOnly={true}>
-  //                 <A_Message />
-  //               </PrivateRoute>
-  //             }
-  //           />
-  //         </Routes>
-  //       </Router>
-  //     </CartProvider>
-  //   </AuthProvider>
-  // );
+            <Route
+              path="/admin-messages"
+              element={
+                <PrivateRoute adminOnly={true}>
+                  <A_Message />
+                </PrivateRoute>
+              }
+            />
+          </Routes>
+        </Router>
+      </CartProvider>
+    </AuthProvider>
+  );
 }
 
 export default App;
